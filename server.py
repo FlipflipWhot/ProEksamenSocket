@@ -19,6 +19,7 @@ print('Waiting for a connection, server Started')
 players = [Player([0, 0], [10, 10], 'red', 'player one'),
            Player([100, 100], [10, 10], 'blue', 'player two')]
 
+
 def threaded_client(conn, player):
     reply = ''
     conn.send(pickle.dumps(players[player]))
@@ -45,6 +46,7 @@ def threaded_client(conn, player):
             break
     print('Lost connection')
     conn.close()
+
 
 currentPlayer = 0
 while True:
